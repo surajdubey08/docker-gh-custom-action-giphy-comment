@@ -1,0 +1,23 @@
+name: Test the Docker Custom Action
+
+on:
+  pull_request: 
+    types: 
+    - opened
+
+jobs:
+  test-custom-action:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    
+    - name: Post PR comment
+      uses: ./
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        giphy-api-key: ${{secrets.GIPHY_API_KEY}}
