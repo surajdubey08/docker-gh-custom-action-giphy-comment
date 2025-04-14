@@ -23,7 +23,7 @@ comment_response=$(curl -s \
   -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$pull_request_number/comments \
-  -d '{"body":"### PR - #$pull_request_number. \n ### :octocat: ⚡ Thank You for this contribution! \n ![GIF]($gif_url)"}')
+  -d "{\"body\": \"### PR - #$pull_request_number. \n ### :octocat: ⚡ Thank You for this contribution! \n ![GIF]($gif_url)\"}")
 
 # Extract and print eh comment URL from the comment response
 comment_url=$(echo "$comment_response" | jq --raw-output .html_url)
