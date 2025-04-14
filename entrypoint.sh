@@ -5,7 +5,7 @@ GITHUB_TOKEN=$1
 GIPHY_API_KEY=$2
 
 # Get the pull request number from the GitHub Event Payload
-pull_request_number=$(jq --raw-output .pull_rqeuest.number "$GITHUB_EVENT_PATH")
+pull_request_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
 echo PR Number = $pull_request_number
 
 # Use the Giphy API to fetch a random Thank You GIF
