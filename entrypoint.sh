@@ -16,6 +16,7 @@ echo Giphy Resposne = $giphy_response
 gif_url=$(echo "$giphy_response | jq --raw-output .data.images.downsized.url")
 echo GIPHY_URL - $gif_url
 
+echo "HELLLLOOOOOO______________________________________\n________________________________________________________"
 # Create a comment with the GIF on the pull request
 comment_response=$(curl -s \
   -X POST \
